@@ -34,6 +34,25 @@ class Solution:
         if end > 1: return [start+1, end+1]
         else: return [-1]
 
+        """ subArr = []
+        start = 0
+        idx = start + 1
+        if arr[start] == 0: subArr.append(arr[start])
+        while idx < n:
+            if idx == n-1:
+                start += 1
+                idx = start + 1
+                continue
+            if arr[idx] + arr[start] == 0:
+                subArr.append(arr[start:idx+1])
+                start+=1
+                idx=start+1
+            else:
+                idx+=1
+        
+        subArr.sort()
+        print(subArr)
+        return len(subArr[len(subArr)-1]) """
 
 #{ 
 #  Driver Code Starts
