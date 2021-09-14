@@ -54,8 +54,7 @@ merge(A, L, R):
 """
 
 def mergeSort(A):
-    print(f"A: {A}")
-    if len(A) == 1: return A
+    if len(A) < 2: return
 
     median = len(A)//2
     leftArr = A[:median]
@@ -65,7 +64,6 @@ def mergeSort(A):
     mergeSort(rightArr)
 
     merge(A, leftArr, rightArr)
-    print(f"post merge A: {A}")
 
 def merge(A, L, R):
     i = j = k = 0
@@ -79,19 +77,15 @@ def merge(A, L, R):
             j += 1
         k += 1
     
-    print(f"In merge - after first while loop A is: {A}")
-    print(f"i: {i}; j: {j}; k: {k}; len(L): {len(L)}; len(R): {len(R)}")
     while i < len(L):
         A[k] = L[i]
         k += 1
         i += 1
-    print(f"A: {A}")
     
     while j < len(R):
         A[k] = R[j]
         k += 1
         j += 1
-    print(f"A: {A}")
 
 
 # Driver program
