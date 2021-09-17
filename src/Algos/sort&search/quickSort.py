@@ -17,18 +17,17 @@ partition(array, leftmostIndex, rightmostIndex)
 """
 
 def partitionWithRightMostPivotElement(arr: list, leftIdx: int, rightIdx: int) -> int:
-    pivot = arr[rightIdx]
-    pivotIdx = leftIdx - 1
+    (pivot, i) = (rightIdx, (leftIdx - 1))
     
-    for i in range(leftIdx, rightIdx):
-        if arr[i] <= pivot:
-            pivotIdx += 1
-            (arr[pivotIdx], arr[i]) = (arr[i], arr[pivotIdx])
+    for j in range(leftIdx, rightIdx):
+        if arr[j] <= arr[pivot]:
+            i += 1
+            (arr[i], arr[j]) = (arr[j], arr[i])
         
     # last swap is outside the loop
-    (arr[pivotIdx+1], arr[rightIdx]) = (arr[rightIdx], arr[pivotIdx+1])
+    (arr[i+1], arr[rightIdx]) = (arr[rightIdx], arr[i+1])
     
-    return pivotIdx+1
+    return i+1
 
 
 def partitionWithleftMostPivotElement(arr: list, leftIdx: int, rightIdx: int) -> int:
