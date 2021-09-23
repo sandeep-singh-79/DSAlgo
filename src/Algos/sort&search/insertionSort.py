@@ -21,7 +21,7 @@ insertionSort(array)
 """
 
 def insertionSort(array, size):
-    if size == 1 or size == 0: return array
+    if size < 2: return array
     if array is None: return []
 
     for step in range(1, size):
