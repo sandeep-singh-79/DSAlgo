@@ -25,7 +25,8 @@ its the only equilibrium point.
  
 
 Your Task:
-The task is to complete the function equilibriumPoint() which takes the array and n as input parameters and returns the point of equilibrium. Return -1 if no such point exists.
+The task is to complete the function equilibriumPoint() which takes the array and n as input parameters and
+returns the point of equilibrium. Return -1 if no such point exists.
 """
 
 

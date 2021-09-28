@@ -8,7 +8,7 @@ Example 1:
 Input:
 N = 3
 arr[] = {1,2,3}
-Output: 1
+Output: 2
 Explanation: index 2 is 3.
 It is the peak element as it is 
 greater than its neighbour 2.
