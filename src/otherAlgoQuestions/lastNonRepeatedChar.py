@@ -11,12 +11,13 @@ def searchLastNonRepeatedChar(string: str) -> str:
 
     characters = OrderedDict()
 
-    for ch in string:
+    for ch in string.lower():
         if ch in characters.keys(): characters[ch] += 1
         else: characters[ch] = 1
     
-    return list(characters.keys())[-1]
+    nonRepeatingChars: OrderedDict = OrderedDict((k, v) for k, v in characters.items() if v == 1)
+    return list(nonRepeatingChars.keys())[-1]
 
 
 string: str = "My name is Ajay"
-print(f"the last non-repeating character in the string {string} is {searchLastNonRepeatedChar(string)}")
+print(f"the last non-repeating character in the string '{string}' is '{searchLastNonRepeatedChar(string)}'")
