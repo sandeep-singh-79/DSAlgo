@@ -24,37 +24,46 @@ class solution:
         (top, bottom) = (0, m-1) # variables for managing rows
         (left, right) = (0, n-1) # variables for managing columns
 
-        dir = self.direction.RIGHT
+        # direction can be denoted by 0, 1, 2, 3
+        # 0 = Right; 1 = Down; 2 = left; 3 = up
+        # dir = self.direction.RIGHT
+        dir = 0
 
         while top <= bottom and left <= right:
-            if dir == self.direction.RIGHT:
+            # if dir == self.direction.RIGHT:
+            if dir == 0:
                 i = left
                 while i <= right:
-                    print(arr[top][i])
+                    print(arr[top][i], end = " ")
                     i += 1
                 top += 1
-                dir = self.direction.DOWN
-            elif dir == self.direction.DOWN:
+                # dir = self.direction.DOWN
+            # elif dir == self.direction.DOWN:
+            elif dir == 1:
                 i = top
                 while i <= bottom:
-                    print(arr[i][right])
+                    print(arr[i][right], end = " ")
                     i+= 1
                 right -= 1
-                dir = self.direction.LEFT
-            elif dir == self.direction.LEFT:
+                # dir = self.direction.LEFT
+            # elif dir == self.direction.LEFT:
+            elif dir == 2:
                 i = right
                 while i >= left:
-                    print(arr[bottom][i])
+                    print(arr[bottom][i], end = " ")
                     i -= 1
                 bottom -= 1
-                dir = self.direction.UP
-            elif dir == self.direction.UP:
+                # dir = self.direction.UP
+            # elif dir == self.direction.UP:
+            elif dir == 3:
                 i = bottom
                 while i >= top:
-                    print(arr[i][left])
+                    print(arr[i][left], end = " ")
                     i -= 1
                 left += 1
-                dir = self.direction.RIGHT
+                # dir = self.direction.RIGHT
+            dir = (dir+1)%4
+        print("")
         
 
 
